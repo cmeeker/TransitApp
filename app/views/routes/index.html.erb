@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bus Buzz</title>
+    <!-- <style type="text/css" href="welcome.css.scss"></style> -->
+    <script src="js/vendor/modernizr.js"></script>
+  </head> 
+  <body> 
+    <div class="off-canvas-wrap">
+      <div class="inner-wrap">
+        <nav class="tab-bar">
+          <section class="left-small">
+            <a class="left-off-canvas-toggle menu-icon" ><span></span></a>
+          </section>
+          <section class="middle tab-bar-section">
+            <h1 class="title">bus buzz</h1>
+          </section>
+        </nav>
+        <aside class="left-off-canvas-menu">
+          <ul class="off-canvas-list">
+            <li><label>Options</label></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Alert Settings</a></li>
+            <li><a href="#">Log-In</a></li>
+            <li><a href="#">Sign-Up</a></li>
+            <li><a href="#"></a></li>
+          </ul>
+        </aside>
+        <section class="main-section">
+          <div class = "canvasSizeFix">
+
+        <!-- content starts here -->
+        <h3>List of Routes</h3>
+        <table class="table table-striped">
+          <tr>
+            <th>Route ID</th>
+            <th>GTFS Route ID</th>
+            <th>Line</th>
+            <th>Route Name</th>
+            <th>Direction 0 (Inbound)</th>
+            <th>Direction 1 (Outbound)</th>
+          </tr>
+          <% @routes.each do |route| %>
+            <tr>
+              <td><%= route.id %></td>
+              <td><%= route.gtfs_route_id %></td>
+              <td><%= route.short_name %></td>
+              <td><%= route.long_name %></td>
+              <td><%= route.inbound %></td>
+              <td><%= route.outbound %></td>
+            </tr>
+          <% end %>
+        </table>
+          <!-- content ends here -->
+          
+          </div>
+        </section>
+      <a class="exit-off-canvas"></a>
+      </div>
+    </div>
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+  </body>
+</html>
+
+
